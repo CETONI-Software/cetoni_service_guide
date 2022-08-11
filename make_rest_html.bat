@@ -1,0 +1,1 @@
+venv\Scripts\activate & sphinx_make.bat html

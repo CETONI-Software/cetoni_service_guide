@@ -28,7 +28,7 @@ html_show_sphinx = True
 html_show_sourcelink = False
 
 # The full version, including alpha/beta/rc tags
-release = '20220504'
+release = '20220812'
 
 
 # -- General configuration ---------------------------------------------------
@@ -154,7 +154,7 @@ html_favicon = '_static/favicon.png'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = '_static/logo_cetoni_elements4.svg'
+html_logo = '_static/logo_sidebar.svg'
 html_title = 'CETONI Service Guide'
 html_last_updated_fmt = '%b %d, %Y %H:%M'
 

@@ -1,9 +1,7 @@
-CETONI Elements Service Guide
-=========================================
+CETONI Nemesys / Qmix Service Guide
+======================================
 
-.. image:: _static/splashscreen_dark.jpg
-
-**Welcome to CETONI Elements documentation!**
+.. image:: _static/title_image.png
 
 With this service guide we want to support you as much as possible in handling 
 the device service or failure cases. Please do not hesitate to contact us in 

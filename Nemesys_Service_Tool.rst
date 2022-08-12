@@ -16,7 +16,7 @@ For most service procedures in this guide you need special software –
 the Nemesys Service Tool – **EPOS Studio**. You can download this service
 tool from this location:
 
-https://CETONI.de/software-downloads/
+https://cetoni.com/software-downloads/
 
 
 Installation

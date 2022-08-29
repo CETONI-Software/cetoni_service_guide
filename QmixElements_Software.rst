@@ -6,13 +6,13 @@
 .. role:: sg-pink-bg
 
 
-QmixElements Software
-=====================
+CETONI Elements Software
+========================
 
 Lowering Log-Interval of CSV and Graphical Logger
 -------------------------------------------------
 
-The minimum value of the log interval in QmixElements is limited to 0.1
+The minimum value of the log interval in CETONI Elements is limited to 0.1
 seconds. Because Windows is not a realtime operating system, there is
 always jitter when doing things in certain intervals. That means, when
 the log interval is set to 0.1 seconds it may be up to 0.11 or down to
@@ -56,7 +56,7 @@ need to edit the current active device configuration.
    .. image:: media/image52.png
 
 #. Now change the :guilabel:`SampleTimeSecs Min` value to the required minimum
-   logging interval. Restart the QmixElements software and open the
+   logging interval. Restart the CETONI Elements software and open the
    logger configuration – now you can lower the logging interval to the
    value entered in the :file:`datalogger.xml` file.
 
@@ -65,13 +65,13 @@ need to edit the current active device configuration.
 
       Logging intervals below 0.01 seconds may cause   
       high CPU load and may have a negative impact on other       
-      QmixElements functions.    
+      CETONI Elements functions.    
 
 
 Edit Device Parameters
 ----------------------
 
-You can edit device parameters directly in the QmixElements software
+You can edit device parameters directly in the CETONI Elements software
 using the **CANopen Tools Plugin**. 
 
 .. rst-class:: steps
@@ -97,7 +97,7 @@ using the **CANopen Tools Plugin**.
 
 The application will now restart with the activated **CANopen tools
 plugin**. You will find detailed instructions about the CANopen Tools
-plugin in the **QmixElements software manual**.
+plugin in the **CETONI Elements software manual**.
 
 .. admonition:: Attention
    :class: caution
@@ -120,7 +120,7 @@ from the application main menu.
 Export Project
 --------------
 
-Currently QmixElements does not support the automatic export of complete
+Currently CETONI Elements does not support the automatic export of complete
 projects. If you need to send a complete project including all settings
 to the CETONI support, you need to execute the following steps.
 
@@ -151,16 +151,16 @@ to the CETONI support, you need to execute the following steps.
 Send Log-Files
 --------------
 
-The QmixElements log files are located in
-:code:`c:\Users\Public\Documents\QmixElements\Log``. The main application log
-file is QmixElements.log.
+The CETONI Elements log files are located in
+:code:`c:\Users\Public\Documents\CETONI Elements\Log``. The main application log
+file is CETONI Elements.log.
 
 .. image:: media/image61.png
 
 In case the CETONI support requests the log files, you can send the
 :file:`QmixEleemnts.log` file or you can send the compressed Log folder. To
 send the compressed Log folder, navigate to the
-:code:`c:\Users\Public\Documents\QmixElements` directory. Press and hold (or
+:code:`c:\Users\Public\Documents\CETONI Elements` directory. Press and hold (or
 right-click) the :guilabel:`Log` folder, select (or point to) :guilabel:`Send to`, and
 then select :guilabel:`Compressed (zipped) folder`. A new zipped folder with the
 same name is created in the same location that you can send to CETONI

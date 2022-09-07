@@ -23,12 +23,13 @@ from sphinx.roles import MenuSelection
 project = 'CETONI Service Guide'
 copyright = '2022, CETONI GmbH'
 author = 'CETONI GmbH'
+version='20220907'
 html_show_copyright = True
 html_show_sphinx = True
 html_show_sourcelink = False
 
 # The full version, including alpha/beta/rc tags
-release = '20220812'
+release = '20220907'
 
 
 # -- General configuration ---------------------------------------------------
@@ -117,7 +118,7 @@ html_theme_options = {
     # canonical_url: This will specify a canonical URL meta link element to tell search engines which URL should be ranked as the primary URL for your documentation. This is important if you have multiple URLs that your documentation is available through. The URL points to the root path of the documentation and requires a trailing slash.
     #'canonical_url': 'https://docs.qgis.org/latest/en/',
     # display_version: If True, the version number is shown at the top of the sidebar. Default: True,
-    #'display_version': True,
+    'display_version': False,
     # logo_only: Only display the logo image, do not display the project name at the top of the sidebar. Default: False,
     'logo_only': False,
     # prev_next_buttons_location': Location to display Next and Previous buttons. This can be either bottom, top, both , or None. Default: 'bottom',

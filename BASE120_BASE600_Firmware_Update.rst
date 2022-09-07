@@ -19,8 +19,6 @@ the installation of the QmixElements or Nemesys User Interface software
 (see figure below).
 
 .. image:: media/image98.png
-   :width: 6.37847in
-   :height: 4.48107in
 
 The software will show you the detected USB-to-CAN interface. If the
 software does not detect any USB-to-CAN interface then please try to

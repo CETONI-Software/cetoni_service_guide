@@ -1,0 +1,23 @@
+.sg-yellow-bg {
+    background-color: #ffc000;
+    padding: 4px;
+    font-weight: bold;
+}
+
+.sg-green-bg {
+    background-color: #92d050;
+    padding: 4px;
+    font-weight: bold;
+}
+
+.sg-blue-bg {
+    background-color: #00b0f0;
+    padding: 4px;
+    font-weight: bold;
+}
+
+.sg-pink-bg {
+    background-color: #ff6699;
+    padding: 4px;
+    font-weight: bold;
+}

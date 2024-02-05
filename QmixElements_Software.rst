@@ -72,32 +72,9 @@ Edit Device Parameters
 ----------------------
 
 You can edit device parameters directly in the CETONI Elements software
-using the **CANopen Tools Plugin**. 
-
-.. rst-class:: steps
-
-#. To open the CANopen Tools Plugin, create
-   a new project by selecting :menuselection:`File --> New Project` from the main menu.
-
-   .. image:: media/image53.png
-
-#. Give the project a meaningful name and click :guilabel:`OK`.
-
-   .. image:: media/image54.png
-
-#. If the new project has been created and activated, select 
-   :menuselection:`Device --> Open Configuration` from the main menu.
-
-   .. image:: media/image55.png
-
-#. Select the configuration :guilabel:`canopentools (shared)` from the list of
-   available configurations and click :guilabel:`OK`.
-
-   .. image:: media/image56.png
-
-The application will now restart with the activated **CANopen tools
-plugin**. You will find detailed instructions about the CANopen Tools
-plugin in the **CETONI Elements software manual**.
+using the **CANopen Tools Plugin**. Read the `CANopen Tools Plugin documentation
+<https://cetoni-software.github.io/cetoni_elements_doc/manual_en/canopentools_EN/canopentools_EN.html>`_
+for detailed instructions how to use it.
 
 .. admonition:: Attention
    :class: caution
@@ -165,3 +142,63 @@ right-click) the :guilabel:`Log` folder, select (or point to) :guilabel:`Send to
 then select :guilabel:`Compressed (zipped) folder`. A new zipped folder with the
 same name is created in the same location that you can send to CETONI
 support.
+
+Change PDO Inhibit Time
+--------------------------
+
+The PDO inhibit time is the time a device waits before sending a PDO if the
+value of the PDO has changed. The CETONI devices are delivered with default
+PDO inhibit times. If you need to change the PDO inhibit time, i.e. if you 
+would like sample the data more often, you can do this with the CANopen Tools
+Plugin. Read the `CANopen Tools Plugin documentation <https://cetoni-software.github.io/cetoni_elements_doc/manual_en/canopentools_EN/canopentools_EN.html>`_
+to learn how to open the CANopen Tools Workspace.
+
+.. admonition:: Attention
+   :class: caution
+
+   Changing the PDO inhibit time can cause             
+   malfunctions or cancel safety mechanisms. Only change       
+   the PDO inhibit time as instructed by the technical support    
+   staff.
+
+.. admonition:: Important
+   :class: note
+
+   Backup your device parameters via :menuselection:`Export DCF file` before
+   changing any parameters. This will allow you to restore the original configuration
+   if something goes wrong or if you accidentally change a parameter that you did not
+   want to change.
+
+To change the PDO inhibit time, do the following steps after you have opened the
+CANopen Tools Workspace:
+
+.. rst-class:: steps
+
+#. Connect to the device by clicking the :guilabel:`Connect` button in the main toolbar.
+
+   .. image:: media/pdo_inhibit_connect.png
+
+#. Scan for the device by clicking the :guilabel:`Scan Network` button in the
+   CANopen Tools toolbar.
+
+   .. image:: media/pdo_inhibit_scan.png
+
+#. Assign an EDS file to the node that you would like to change. right-click on the
+   node and select :menuselection:`Assign EDS File`. Select the EDS file that
+   matches your device.
+
+   .. image:: media/pdo_inhibit_assign_eds.png
+
+#. Open the Transmit PDO parameters for the PDO that you would like to change.
+   Normally the relevant object dictionary entries are **0x1800, 0x1801, 0x1802 and 
+   0x1803**.
+
+   .. image:: media/pdo_inhibit_objdic_index.png
+
+#. Change the inhibit time to the desired value. The inhibit time is given in
+   100 µs units. For example, if you would like to change the inhibit time to
+   10 ms you need to enter 100 in the inhibit time field.
+
+#. Save the parameters - right click on the node and select :menuselection:`Node: Store Parameters`.
+
+   .. image:: media/pdo_inhibit_store_param.png

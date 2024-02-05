@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4. Qmix I/O-B Module &mdash; CETONI Service Guide</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/cetoni_style_override_css/style_override.css" type="text/css" />
+      <link rel="stylesheet" href="_static/cetoni_style_override_css/color_roles.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/sg_color_roles.css" type="text/css" />
+      <link rel="stylesheet" href="_static/dark_mode_css/general.css" type="text/css" />
+      <link rel="stylesheet" href="_static/dark_mode_css/dark.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script src="_static/dark_mode_js/default_light.js"></script>
+        <script src="_static/dark_mode_js/theme_switcher.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Nemesys UserInterface" href="Nemesys_UserInterface.html" />
+    <link rel="prev" title="3. Qmix P / Q+ / Q- / TC and V Modules" href="Qmix_P_Q%2B_Q-_TC_and_V_Modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> CETONI Service Guide
+            <img src="_static/logo_sidebar.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Nemesys_Service_Tool.html">1. Nemesys Service Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QmixElements_Software.html">2. CETONI Elements Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Qmix_P_Q%2B_Q-_TC_and_V_Modules.html">3. Qmix P / Q+ / Q- / TC and V Modules</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Qmix I/O-B Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-a-bus-terminal">4.1. Configuring a bus terminal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">4.1.1. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#device-parameter-access">4.1.2. Device parameter access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#register-access">4.1.3. Register access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reading-register-values">4.1.4. Reading register values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#writing-register-values">4.1.5. Writing register values</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#kl316x-analog-input-terminal-0-10-v">4.2. KL316x - Analog input terminal 0…10 V</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-auto-calibration">4.2.1. Configuring Auto Calibration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#kl320x-pt100-rtd-terminal">4.3. KL320x – PT100 (RTD) Terminal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-sensor-type">4.3.1. Configuring Sensor Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#kl331x-thermocouple-terminal">4.4. KL331x - Thermocouple Terminal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-thermocouple-type">4.4.1. Configuring Thermocouple Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-terminals">4.5. Adding Terminals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Nemesys_UserInterface.html">5. Nemesys UserInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BASE120_BASE600_Firmware_Update.html">6. BASE 120 / BASE 600 Firmware Update</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CETONI Service Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">4. </span>Qmix I/O-B Module</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="qmix-i-o-b-module">
+<h1><span class="section-number">4. </span>Qmix I/O-B Module<a class="headerlink" href="#qmix-i-o-b-module" title="Permalink to this headline"></a></h1>
+<section id="configuring-a-bus-terminal">
+<h2><span class="section-number">4.1. </span>Configuring a bus terminal<a class="headerlink" href="#configuring-a-bus-terminal" title="Permalink to this headline"></a></h2>
+<section id="overview">
+<h3><span class="section-number">4.1.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h3>
+<p>The QmixIO-B module is equipped with a series of bus terminals with
+different functions, depending on the configuration. Each individual bus
+terminal contains a set of registers for configuration or for reading
+status information. These registers are numbered starting at 0 and can
+therefore be easily addressed via the index. The following picture shows
+the register overview of the KL3162 analog input terminal.</p>
+<img alt="_images/image68.png" src="_images/image68.png" />
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To obtain an overview and description of all registers for a specific
+terminal, simply download the documentation for the terminal from
+Beckhoff.</p>
+</div>
+</section>
+<section id="device-parameter-access">
+<h3><span class="section-number">4.1.2. </span>Device parameter access<a class="headerlink" href="#device-parameter-access" title="Permalink to this headline"></a></h3>
+<p>To access and configure a certain bus terminal you can use the
+QmixElements CANopenTools Plugin.</p>
+<ol class="steps arabic">
+<li><p>To open the CANopenTools Plugin, start
+the QmixElements software and select from the main menu the menu item
+<span class="menuselection">Device → Open Configuration</span>.</p>
+<img alt="_images/image62.png" src="_images/image62.png" />
+</li>
+<li><p>Then select the canopentools configuration:</p>
+<img alt="_images/image63.png" src="_images/image63.png" />
+</li>
+<li><p>Connect your QmixIO-B module or your Beckhoff bus coupler with your PC
+and turn it <strong>on</strong>. Then click the <span class="guilabel">Connect</span> <span class="guinum">❶</span> button in the QmixElements
+software and scan for connected devices <span class="guinum">❷</span>.</p>
+<img alt="_images/image64.png" src="_images/image64.png" />
+</li>
+<li><p>The software should detect the connected module <span class="guinum">❶</span>. Click with the right
+mouse button on the entry with the detected device and select <code class="file docutils literal notranslate"><span class="pre">Assign</span> <span class="pre">EDS</span> <span class="pre">File</span></code>
+<span class="guinum">❷</span> (see figure below).</p>
+<img alt="_images/image65.png" src="_images/image65.png" />
+</li>
+<li><p>Select the valid EDS file for the Beckhoff BK5151 bus coupler from the
+existing EDS-files.</p>
+<img alt="_images/image69.png" src="_images/image69.png" />
+</li>
+<li><p>Now navigate to the object dictionary entry <strong>0x4501– Register
+Communication Bus Terminal</strong>. Select the sub entry (0x4501subx) that
+matches the channel of your bus terminal that you want to configure.</p>
+<p>The bus terminals are numbered in the order they are attached to the bus
+coupler. I.e. if you have two terminals and the first terminal is an
+analog input terminal and the second terminal is a thermocouple
+terminal, then the object dictionary entry would be 0x4501sub2 –
+Register Communication Bus Terminal 2 for the configuration of the
+thermocouple bus terminal.</p>
+</li>
+</ol>
+<img alt="_images/image70.png" src="_images/image70.png" />
+</section>
+<section id="register-access">
+<h3><span class="section-number">4.1.3. </span>Register access<a class="headerlink" href="#register-access" title="Permalink to this headline"></a></h3>
+<p>Register values are read and written via the corresponding object
+dictionary entry for the terminal <strong>0x4501subX</strong> where “X” is the index of the
+terminal. The register is accessed by reading and writing a 32-bit
+value. The following table shows the bits of this 32–bit value:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 24%" />
+<col style="width: 24%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>31</p></th>
+<th class="head"><p>30 - 24</p></th>
+<th class="head"><p>23 - 16</p></th>
+<th class="head"><p>15 - 9</p></th>
+<th class="head"><p>7 - 0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="sg-yellow-bg">Access bit</span></p></td>
+<td><p><span class="sg-green-bg">Channel number</span></p></td>
+<td><p><span class="sg-blue-bg">Register number</span></p></td>
+<td><p><span class="sg-pink-bg">High byte register value</span></p></td>
+<td><p><span class="sg-pink-bg">Low byte register value</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>MSB</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>LSB</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><span class="sg-yellow-bg">Access bit:</span> 0 = read access, 1 = write access</p></li>
+<li><p><span class="sg-green-bg">Channel number:</span> If a bus terminal has multiple channels, like the
+Kl3162 bus terminal with 2 analog input channels, this channel number
+addresses the corresponding channel of the terminal. Channel number 0
+corresponds here to the first channel, 1 to the second channel, and
+so forth.</p></li>
+<li><p><span class="sg-blue-bg">Register number:</span> The register that should be accessed. Read the bus
+terminal documentation for a register overview.</p></li>
+<li><p><span class="sg-pink-bg">Register value:</span> The 16-bit register value consists of high and low
+byte.</p></li>
+</ul>
+</section>
+<section id="reading-register-values">
+<h3><span class="section-number">4.1.4. </span>Reading register values<a class="headerlink" href="#reading-register-values" title="Permalink to this headline"></a></h3>
+<p>To read a register value, you first need to write to object <strong>0x4501subX</strong>
+to identify the channel and the register and then you can read the
+register value from the same object. So each read consists of a write
+access followed by a read access from the same object.</p>
+<p>The following example shows how to read a parameter. For this example,
+we assume that we want to read the calibration interval (register 40)
+from the second channel of the KL3162 analog input terminal.</p>
+<ol class="steps arabic">
+<li><p>This terminal is the 1<sup>st</sup> terminal on our QmixIO-B module so we need
+to access the object dictionary entry <strong>0x4501sub1</strong>.</p></li>
+<li><p>To read the calibration offset value, we first need to write the
+following value:</p>
+<ul class="simple">
+<li><p>Access bit <span class="sg-yellow-bg">0</span> = read access</p></li>
+<li><p>Channel number <span class="sg-green-bg">1</span> (0 = first channel, <strong>1 = second channel</strong> …)</p></li>
+<li><p>Register index 40 (Calibration interval) hexadecimal <span class="sg-blue-bg">28</span></p></li>
+<li><p>Register value <span class="sg-pink-bg">0</span></p></li>
+</ul>
+<p>So we have the following value that we need to write: 0x<span class="sg-yellow-bg">0</span><span class="sg-green-bg">1</span><span class="sg-blue-bg">28</span><span class="sg-pink-bg">0000</span></p>
+<img alt="_images/image71.png" src="_images/image71.png" />
+</li>
+<li><p>To see the value that has been read from device, you need to click on
+another object <span class="guinum">❶</span>, e.g. 4501sub0 and then click on the index <em>0x4501sub1</em>
+again <span class="guinum">❷</span>. This will trigger a read of the object <em>4501sub1</em>.</p>
+<img alt="_images/image72.png" src="_images/image72.png" />
+</li>
+<li><p>Now you can see the value read from the device. It is
+<span class="sg-yellow-bg">0</span><span class="sg-green-bg">1</span><span class="sg-blue-bg">28</span><span class="sg-pink-bg">0708</span>.</p></li>
+</ol>
+<p>So the
+value read from the device contains the same configuration for Access
+bit, channel number and register index, but the register value field has
+been updated with the value read from device. The hexadecimal value of
+708 corresponds to 1800 decimal. The calibration value is given in
+multiple of 100 ms so the 1800 indicates a calibration interval of 180
+seconds.</p>
+</section>
+<section id="writing-register-values">
+<h3><span class="section-number">4.1.5. </span>Writing register values<a class="headerlink" href="#writing-register-values" title="Permalink to this headline"></a></h3>
+<p>Before you can change any register value of a terminal channel, you need
+to disable the write protection for the channel. In normal mode all user
+registers are read-only with the exception of Register 31. In order to
+deactivate this write protection you must write the code word (<strong>0x1235</strong>)
+into Register 31. If a value other than 0x1235 is written into Register
+31, write <strong>protection is reactivated</strong>.</p>
+<p>Please note that changes to a
+register only become effective after restarting the terminal (power
+off/power-on). So to deactivate write protection, the value 0x1<strong>y</strong>1F1235
+(<strong>y</strong> = Channel number) needs to be written first.</p>
+<p>For the following example we want to change the calibration interval of
+the first channel of a KL3162 dual channel analog output terminal to 300
+seconds. The first step we need to do is to disable write protection for
+the first channel. This terminal is the 1<sup>st</sup> terminal on our
+QmixIO-B module so we need to access the object dictionary entry
+0x4501sub<strong>1</strong>.</p>
+<p id="removing-write-protection"><span class="step">Step 1 - Removing Write Protection</span></p>
+<p>First we disable write protection by writing the codeword 1235 to the
+register 31:</p>
+<ul class="simple">
+<li><p>Access bit <span class="sg-yellow-bg">1</span> = <strong>write access</strong></p></li>
+<li><p>Channel number <span class="sg-green-bg">0</span> (<strong>0 = first channel</strong>, 1 = second channel …)</p></li>
+<li><p>Register index 31 (Code word register) –&gt; hexadecimal <span class="sg-blue-bg">1F</span></p></li>
+<li><p>Register value <span class="sg-pink-bg">1235</span></p></li>
+</ul>
+<p>So we write the following value to disable write protection:
+0x<span class="sg-yellow-bg">8</span><span class="sg-green-bg">0</span><span class="sg-blue-bg">1F</span><span class="sg-pink-bg">1235</span></p>
+<img alt="_images/image73.png" src="_images/image73.png" />
+<p><span class="step">Step 2 - Writing new Value</span></p>
+<p>Now we can change the calibration time:</p>
+<ul class="simple">
+<li><p>Access bit <span class="sg-yellow-bg">1</span> = <strong>write access</strong></p></li>
+<li><p>Channel number <span class="sg-green-bg">0</span> (<strong>0 = first channel</strong>, 1 = second channel …)</p></li>
+<li><p>Register index 40 (Calibration interval) –&gt; hexadecimal <span class="sg-blue-bg">28</span></p></li>
+<li><p>Register value 300 seconds, the value is given in multiple of 100 ms,
+that means value is 3000 decimal –&gt; hexadecimal <span class="sg-pink-bg">0BB8</span></p></li>
+</ul>
+<p>So we write the following value to change the calibration interval to
+300 seconds: 0x<span class="sg-yellow-bg">8</span><span class="sg-green-bg">0</span><span class="sg-blue-bg">28</span><span class="sg-pink-bg">0BB8</span></p>
+<p><span class="step">Step 3 - Reading back written value</span></p>
+<p>Now we can verify the written value by reading the register value back.</p>
+<ul class="simple">
+<li><p>Access bit <span class="sg-yellow-bg">0</span> = <strong>read access</strong></p></li>
+<li><p>Channel number <span class="sg-green-bg">0</span> (<strong>0 = first channel</strong>, 1 = second channel …)</p></li>
+<li><p>Register index 40 (Calibration gain) –&gt; hexadecimal <span class="sg-blue-bg">28</span></p></li>
+<li><p>Register value 300 seconds, the value is given in multiple of 100 ms,
+that means value is 3000 decimal –&gt; hexadecimal <span class="sg-pink-bg">0000</span></p></li>
+</ul>
+<p>So we write the following value to read the calibration interval:
+0x<span class="sg-yellow-bg">0</span><span class="sg-green-bg">0</span><span class="sg-blue-bg">28</span><span class="sg-pink-bg">0000</span></p>
+<p>Click on another object dictionary entry and then on this entry
+again, to force an update of the value read from device, like it is
+written in the section <a class="reference internal" href="#reading-register-values">Reading register values</a>.</p>
+<p id="storing-data-peristently"><span class="step">Step 4 - Storing data persistently</span></p>
+<p>If you have configured all channels properly, you can write the
+configuration persistently into the non-volatile memory of the Beckhoff
+device. Click with the right mouse button into the device entry <span class="guinum">❶</span> and
+select <span class="guilabel">Node Store Parameters</span> from the context menu <span class="guinum">❷</span>.</p>
+<img alt="_images/image74.png" src="_images/image74.png" />
+</section>
+</section>
+<section id="kl316x-analog-input-terminal-0-10-v">
+<h2><span class="section-number">4.2. </span>KL316x - Analog input terminal 0…10 V<a class="headerlink" href="#kl316x-analog-input-terminal-0-10-v" title="Permalink to this headline"></a></h2>
+<section id="configuring-auto-calibration">
+<h3><span class="section-number">4.2.1. </span>Configuring Auto Calibration<a class="headerlink" href="#configuring-auto-calibration" title="Permalink to this headline"></a></h3>
+<p>To configure the KL316x terminal you can use the QmixElements
+CANopenTools Plugin. Please read the section <a class="reference internal" href="#configuring-a-bus-terminal">Configuring a bus terminal</a>
+to learn how to read and write
+registers of a bus terminal.</p>
+<p>Sometimes the Auto Calibration of the KL316x analog input terminal may
+fail or cause problems. You can prevent this by disabling auto
+calibration and setting the interval for forced calibration to a very
+long time. The following picture shows relevant registers of the bus
+terminal (copied from manual).</p>
+<img alt="_images/image75.png" src="_images/image75.png" />
+<div class="note admonition">
+<p class="admonition-title">Important</p>
+<p>Before you can change any value, you need to disable write protection
+for the channel of the terminal. Read the section <a class="reference internal" href="#removing-write-protection"><span class="std std-ref">Removing Write Protection</span></a>
+to learn how to disable the
+write protection for the registers of a single channel.</p>
+</div>
+<p>If write protection is removed, we can start writing other registers.</p>
+<ol class="steps arabic">
+<li><p>First you can set the calibration interval (R40) to the maximum value
+0xFFFF decimal 65536. The value is given in multiple of 100 ms so this
+means calibration interval of 6553 seconds:</p>
+<ul class="simple">
+<li><p>Access bit <span class="sg-yellow-bg">1</span> = <strong>write access</strong></p></li>
+<li><p>Channel number <span class="sg-green-bg">y</span> (<strong>0 = first channel</strong>, 1 = second channel …)</p></li>
+<li><p>Register index 40 (Calibration interval) –&gt; hexadecimal <span class="sg-blue-bg">28</span></p></li>
+<li><p>Register value maximum –&gt; hexadecimal <span class="sg-pink-bg">FFFF</span></p></li>
+</ul>
+</li>
+<li><p>Write value 0x<span class="sg-yellow-bg">8</span><span class="sg-green-bg">y</span><span class="sg-blue-bg">28</span><span class="sg-pink-bg">FFFF</span>
+to object 0x4501subX and replace y with the
+channel number. You can now read the value back, to verify if it has
+been written properly by writing 0x<span class="sg-yellow-bg">0</span><span class="sg-green-bg">y</span><span class="sg-blue-bg">28</span><span class="sg-pink-bg">0000</span>.</p></li>
+<li><p>Now we also set the interval for forced calibration (R44) to a maximum
+value 0xFFFF:</p>
+<ul class="simple">
+<li><p>Access bit <span class="sg-yellow-bg">1</span> = <strong>write access</strong></p></li>
+<li><p>Channel number <span class="sg-green-bg">y</span> (<strong>0 = first channel</strong>, 1 = second channel …)</p></li>
+<li><p>Register index 44 (Interval for forced calibration) –&gt; hexadecimal <span class="sg-blue-bg">2C</span></p></li>
+<li><p>Register value maximum –&gt; hexadecimal <span class="sg-pink-bg">FFFF</span></p></li>
+</ul>
+</li>
+<li><p>Write value 0x<span class="sg-yellow-bg">8</span><span class="sg-green-bg">y</span><span class="sg-blue-bg">2C</span><span class="sg-pink-bg">FFFF</span>
+to object 0x4501subX and replace y with the
+channel number.</p>
+<img alt="_images/image76.png" src="_images/image76.png" />
+<p>You can now read the value back, to verify if it has been written
+properly by writing
+0x<span class="sg-yellow-bg">0</span><span class="sg-green-bg">y</span><span class="sg-blue-bg">28</span><span class="sg-pink-bg">0000</span>.</p>
+</li>
+<li><p>Then you can disable auto calibration via the feature register R32.</p>
+<img alt="_images/image77.png" src="_images/image77.png" />
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This register contains several configuration bits. Read the KL316x
+manual for a detailed description of the bits in the feature register.</p>
+</div>
+<img alt="_images/image78.png" src="_images/image78.png" />
+</li>
+<li><p>So we need to set Bit 5 of this register to 1 to disable. To ensure that
+no other bits are modified, you first need to read the register value
+from the device:</p>
+<ul class="simple">
+<li><p>Access bit <span class="sg-yellow-bg">0</span> = <strong>read access</strong></p></li>
+<li><p>Channel number <span class="sg-green-bg">y</span> (<strong>0 = first channel</strong>, 1 = second channel …)</p></li>
+<li><p>Register index 32 (Calibration gain) hexadecimal <span class="sg-blue-bg">20</span></p></li>
+<li><p>Register value <span class="sg-pink-bg">0000</span></p></li>
+</ul>
+</li>
+<li><p>We write the following value to read the feature register:
+0x<span class="sg-yellow-bg">0</span><span class="sg-green-bg">0</span><span class="sg-blue-bg">20</span><span class="sg-pink-bg">0000</span>.</p>
+<p>Normally the device should return the default configuration value: 0.
+Now you can set bit 5 – that means the value to write will be the value
+read from device ored with 0x0020 (Bit 5 set).</p>
+<ul class="simple">
+<li><p>Access bit <span class="sg-yellow-bg">1</span> = <strong>read access</strong></p></li>
+<li><p>Channel number <span class="sg-green-bg">y</span> (<strong>0 = first channel</strong>, 1 = second channel …)</p></li>
+<li><p>Register index 32 (Calibration gain) hexadecimal <span class="sg-blue-bg">20</span></p></li>
+<li><p>Register value <span class="sg-pink-bg">0020</span></p></li>
+</ul>
+</li>
+<li><p>Write value 0x<span class="sg-yellow-bg">8</span><span class="sg-green-bg">y</span><span class="sg-blue-bg">20</span><span class="sg-pink-bg">0020</span>
+to object 0x4501subX and replace y with the
+channel number. You can now read the value back, to verify if it has
+been written properly by writing
+0x<span class="sg-yellow-bg">0</span><span class="sg-green-bg">y</span><span class="sg-blue-bg">20</span><span class="sg-pink-bg">0000</span>.</p></li>
+<li><p>If you have configured all channels properly, you can write the
+configuration persistently into the non-volatile memory of the Beckhoff
+device like written in section <a class="reference internal" href="#storing-data-peristently"><span class="std std-ref">Storing data persistently</span></a>.</p></li>
+</ol>
+</section>
+</section>
+<section id="kl320x-pt100-rtd-terminal">
+<h2><span class="section-number">4.3. </span>KL320x – PT100 (RTD) Terminal<a class="headerlink" href="#kl320x-pt100-rtd-terminal" title="Permalink to this headline"></a></h2>
+<section id="configuring-sensor-type">
+<h3><span class="section-number">4.3.1. </span>Configuring Sensor Type<a class="headerlink" href="#configuring-sensor-type" title="Permalink to this headline"></a></h3>
+<p>To configure the thermocouple type of a KL320x terminal you can use the
+QmixElements CANopenTools Plugin. Please read the section <a class="reference internal" href="#configuring-a-bus-terminal">Configuring a
+bus terminal</a> to learn how to read and
+write registers of a bus terminal.</p>
+<ol class="steps arabic">
+<li><p>You can select the sensor type via the feature register (<strong>32</strong>) of the
+KL320x bus terminal. Here is a snippet from the KL320x manual that shows
+the register <strong>R32</strong>. You can select the type via bits 12-15.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Feature bit no.</strong></p></th>
+<th class="head"></th>
+<th class="head"><p><strong>Description of the operating mode</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Bit 0</p></td>
+<td><p>1</p></td>
+<td><p>User scaling (R33, R44) active [0]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bit 1</p></td>
+<td><p>1</p></td>
+<td><p>Manufacturer scaling (R19, R20) active [1]</p></td>
+</tr>
+<tr class="row-even"><td><p>Bit 2</p></td>
+<td><p>1</p></td>
+<td><p>Watchdog timer active [1]</p>
+<p>(In the delivery state, the watchdog timer is switched on.)</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Bit 3</p></td>
+<td><p>1</p></td>
+<td><p>Sign / amount representation [0]</p>
+<p>(Sign / amount representation is active instead of two’s- complement representation (-1 = 0x8001). )</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Bit 4</p></td>
+<td><p>1</p></td>
+<td><p>Siemens output format [0]</p>
+<p>(This bit is used for inserting status information on the lowest 3 bits (see below). )</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Bit 5, 6</p></td>
+<td><p>/</p></td>
+<td><p>reserved, do not change.</p></td>
+</tr>
+<tr class="row-even"><td><p>Bit 7</p></td>
+<td><p>1</p></td>
+<td><p>Activates filter constant in R37 [0]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bit 8</p></td>
+<td><p>1</p></td>
+<td><p>Over range Protection [1]</p>
+<p>(If the temperature exceeds 850°C the status bits are correspondingly set and the output value is 850°C. )</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Bit 9</p></td>
+<td><p>/</p></td>
+<td><p>reserved, do not change</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bit 10</p></td>
+<td><p>1</p></td>
+<td><p>Two-wire connection [0]</p></td>
+</tr>
+<tr class="row-even"><td><p>Bit 11</p></td>
+<td><p>/</p></td>
+<td><p>reserved, do not change</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bit 15, 14, 13, 12</p></td>
+<td><p>Element</p></td>
+<td><p>Valid measuring range</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>0000</p></td>
+<td><p><strong>PT100</strong></p></td>
+<td><p>-200°C to 850°C</p></td>
+</tr>
+<tr class="row-even"><td><p>0001</p></td>
+<td><p><strong>NI100</strong></p></td>
+<td><p>-60°C to 250°C</p></td>
+</tr>
+<tr class="row-odd"><td><p>0010</p></td>
+<td><p><strong>PT1000</strong></p></td>
+<td><p>-200°C to 850°C</p></td>
+</tr>
+<tr class="row-even"><td><p>0011</p></td>
+<td><p><strong>PT500</strong></p></td>
+<td><p>-200°C to 850°C</p></td>
+</tr>
+<tr class="row-odd"><td><p>0100</p></td>
+<td><p><strong>PT200</strong></p></td>
+<td><p>-200° C to 850°C</p></td>
+</tr>
+<tr class="row-even"><td><p>0101</p></td>
+<td><p><strong>NI1000</strong></p></td>
+<td><p>-200°C to 850°C</p></td>
+</tr>
+<tr class="row-odd"><td><p>0110</p></td>
+<td><p><strong>NI120</strong></p></td>
+<td><p>-80°C to 320°C</p></td>
+</tr>
+<tr class="row-even"><td><p>1110</p></td>
+<td><p><strong>Output in Ω</strong></p></td>
+<td><p>10.0 Ω to 5000.0 Ω</p></td>
+</tr>
+<tr class="row-odd"><td><p>1111</p></td>
+<td><p><strong>Output in Ω</strong></p></td>
+<td><p>10.0 Ω to 1200.0 Ω</p></td>
+</tr>
+</tbody>
+</table>
+<p>When writing data to the terminal or reading data to the terminal, the
+register value of the feature register is mapped into the lower 16 bits
+of the 32 bit message value:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>31</p></th>
+<th class="head"><p>30 - 24</p></th>
+<th class="head"><p>23 - 16</p></th>
+<th class="head"><p>15 - 12</p></th>
+<th class="head"><p>11 - 0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="sg-yellow-bg">Access bit</span></p></td>
+<td><p><span class="sg-green-bg">Channel number</span></p></td>
+<td><p><span class="sg-blue-bg">0x20 (decimal 32)</span></p></td>
+<td><p><span class="sg-pink-bg">Feature register value - Sensor Type</span></p></td>
+<td><p><span class="sg-pink-bg">Feature register value - Other Feature Bits</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>MSB</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>LSB</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Now navigate to the object dictionary entry <strong>0x4501– Register Communication Bus Terminal</strong>.
+Select the sub entry (<strong>0x4501subX</strong>) that
+matches the channel of your thermocouple terminal. I.e. if you have two
+terminals and the first terminal is an analog input terminal and the
+second terminal is your thermocouple terminal, then the object
+dictionary entry would be 0x4501sub2 – Register Communication Bus
+Terminal 2.</p>
+<img alt="_images/image70.png" src="_images/image70.png" />
+</li>
+<li><p>Before you can change any register value of a terminal channel, you need
+to disable the write protection for the channel. Read section <a class="reference internal" href="#removing-write-protection"><span class="std std-ref">Removing Write Protection</span></a>
+to learn how to disable
+the write protection.</p>
+<p>To disable write protection for a channel, write
+0x<span class="sg-yellow-bg">8</span><span class="sg-green-bg">y</span><span class="sg-blue-bg">1F</span><span class="sg-pink-bg">1235</span>
+to the channel. Replace the y with the channel number. If you would like to
+change the first channel (channel <span class="sg-green-bg">0</span>) then write
+0x<span class="sg-yellow-bg">8</span><span class="sg-green-bg">0</span><span class="sg-blue-bg">1F</span><span class="sg-pink-bg">1235</span>
+to the terminal register.</p>
+<img alt="_images/image73.png" src="_images/image73.png" />
+</li>
+<li><p>Now you can write the RTD sensor type to the terminal. Use the values
+from the feature register table above. Replace <span class="sg-green-bg">y</span> with the channel
+number. Please note, that writing the feature register may change other
+bits in the feature register:</p>
+<ul class="simple">
+<li><p>PT100 – 0x<span class="sg-yellow-bg">8</span><span class="sg-green-bg">y</span><span class="sg-blue-bg">20</span><span class="sg-pink-bg">0106</span></p></li>
+<li><p>PT1000 – 0x<span class="sg-yellow-bg">8</span><span class="sg-green-bg">y</span><span class="sg-blue-bg">20</span><span class="sg-pink-bg">1106</span></p></li>
+</ul>
+<p>To configure the PT100 sensor for channel <span class="sg-green-bg">0</span> write
+0x<span class="sg-yellow-bg">8</span><span class="sg-green-bg">0</span><span class="sg-blue-bg">20</span><span class="sg-pink-bg">0106</span>
+to the terminal.</p>
+<img alt="_images/image79.png" src="_images/image79.png" />
+</li>
+<li><p>Now you can verify that the thermocouple has been configured properly,
+by reading back the configured register value. To do this, first write
+0x<span class="sg-yellow-bg">0</span><span class="sg-green-bg">y</span><span class="sg-blue-bg">20</span><span class="sg-pink-bg">0000</span>
+to the terminal. (e.g. 0x<span class="sg-yellow-bg">0</span><span class="sg-green-bg">0</span><span class="sg-blue-bg">20</span><span class="sg-pink-bg">0000</span>
+for channel <span class="sg-green-bg">0</span>).</p>
+<img alt="_images/image80.png" src="_images/image80.png" />
+</li>
+<li><p>Then click on sub index 0 and then on the sub index of the terminal, to
+update the value.</p>
+<img alt="_images/image81.png" src="_images/image81.png" />
+</li>
+<li><p>If you have configured all channels properly, you can write the
+configuration persistently into the non-volatile memory of the Beckhoff
+device like written in section <a class="reference internal" href="#storing-data-peristently"><span class="std std-ref">Storing data persistently</span></a>.</p></li>
+</ol>
+</section>
+</section>
+<section id="kl331x-thermocouple-terminal">
+<h2><span class="section-number">4.4. </span>KL331x - Thermocouple Terminal<a class="headerlink" href="#kl331x-thermocouple-terminal" title="Permalink to this headline"></a></h2>
+<section id="configuring-thermocouple-type">
+<h3><span class="section-number">4.4.1. </span>Configuring Thermocouple Type<a class="headerlink" href="#configuring-thermocouple-type" title="Permalink to this headline"></a></h3>
+<p>To configure the thermocouple type of a KL331x terminal you can use the
+QmixElements CANopenTools Plugin. Please read the section <a class="reference internal" href="#configuring-a-bus-terminal">Configuring a
+bus terminal</a> to learn how to read and
+write registers of a bus terminal.</p>
+<p>You can select the thermoelement type via the feature register (32) of
+the KL331x bus terminal. Here is a snippet from the KL331x manual that
+shows the register R32. You can select the type via bits 12-15.</p>
+<img alt="_images/image82.png" src="_images/image82.png" />
+<ol class="steps arabic">
+<li><p>When writing data to the terminal or reading data to the terminal, the
+register value of the feature register is mapped into the lower 16 bits
+of the 32 bit message value:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>31</p></th>
+<th class="head"><p>30 - 24</p></th>
+<th class="head"><p>23 - 16</p></th>
+<th class="head"><p>15 - 12</p></th>
+<th class="head"><p>11 - 0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="sg-yellow-bg">Access bit</span></p></td>
+<td><p><span class="sg-green-bg">Channel number</span></p></td>
+<td><p><span class="sg-blue-bg">0x20 (decimal 32)</span></p></td>
+<td><p><span class="sg-pink-bg">Feature register value - Sensor Type</span></p></td>
+<td><p><span class="sg-pink-bg">Feature register value - Other Feature Bits`</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>MSB</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>LSB</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Now navigate to the object dictionary entry <strong>0x4501– Register
+Communication Bus Terminal</strong>. Select the sub entry (0x4501subX) that
+matches the channel of your thermocouple terminal. I.e. if you have two
+terminals and the first terminal is an analog input terminal and the
+second terminal is your thermocouple terminal, then the object
+dictionary entry would be 0x4501sub2 – Register Communication Bus
+Terminal 2.</p>
+<img alt="_images/image70.png" src="_images/image70.png" />
+</li>
+<li><p>Before you can change any register value of a terminal channel, you need
+to disable the write protection for the channel. Read section <a class="reference internal" href="#removing-write-protection"><span class="std std-ref">Removing Write Protection</span></a>
+to learn how to disable
+the write protection.</p>
+<p>To disable write protection for a channel, write 0x<span class="sg-yellow-bg">8</span><span class="sg-green-bg">y</span><span class="sg-blue-bg">F1</span><span class="sg-pink-bg">1235</span>
+to the channel. Replace the <span class="sg-green-bg">y</span> with the channel number. If you would like to
+change the first channel (channel <span class="sg-green-bg">0</span>) then write
+0x<span class="sg-yellow-bg">8</span><span class="sg-green-bg">0</span><span class="sg-blue-bg">F1</span><span class="sg-pink-bg">1235</span>
+to the terminal register.</p>
+<img alt="_images/image73.png" src="_images/image73.png" />
+</li>
+<li><p>Now you can write the thermocouple type to the terminal. Use the
+following values for the different types:</p>
+<ul class="simple">
+<li><p>Typ K – 0x<span class="sg-yellow-bg">8</span><span class="sg-green-bg">y</span><span class="sg-blue-bg">20</span><span class="sg-pink-bg">1026</span></p></li>
+<li><p>Typ J – 0x<span class="sg-yellow-bg">8</span><span class="sg-green-bg">y</span><span class="sg-blue-bg">20</span><span class="sg-pink-bg">2026</span></p></li>
+</ul>
+<p>To configure the <span class="sg-pink-bg">Typ K</span> thermocouple for channel <span class="sg-green-bg">0</span>
+then write 0x<span class="sg-yellow-bg">8</span><span class="sg-green-bg">0</span><span class="sg-blue-bg">20</span><span class="sg-pink-bg">1026</span>
+to the terminal.</p>
+<img alt="_images/image83.png" src="_images/image83.png" />
+</li>
+<li><p>Now you can verify that the thermocouple has been configured properly,
+by reading back the configured register value. To do this, first write
+0x<span class="sg-yellow-bg">0</span><span class="sg-green-bg">y</span><span class="sg-blue-bg">20</span><span class="sg-pink-bg">0000</span>
+to the terminal. (e.g. 0x<span class="sg-yellow-bg">0</span><span class="sg-green-bg">0</span><span class="sg-blue-bg">20</span><span class="sg-pink-bg">0000</span>
+for channel <span class="sg-green-bg">0</span>).</p>
+<img alt="_images/image80.png" src="_images/image80.png" />
+</li>
+<li><p>Then click on sub index 0 and then on the sub index of the terminal, to
+update the value.</p>
+<img alt="_images/image84.png" src="_images/image84.png" />
+</li>
+<li><p>If you have configured all channels properly, you can write the
+configuration persistently into the non-volatile memory of the Beckhoff
+device like written in section <a class="reference internal" href="#storing-data-peristently"><span class="std std-ref">Storing data persistently</span></a>.</p></li>
+</ol>
+</section>
+</section>
+<section id="adding-terminals">
+<h2><span class="section-number">4.5. </span>Adding Terminals<a class="headerlink" href="#adding-terminals" title="Permalink to this headline"></a></h2>
+<blockquote>
+<div><p>Before you start, please contact the application and sales team of
+CETONI and tell them which device you are going to update (CET-number)
+and which terminals you are going to add to your Qmix-I/O-B. CETONI will
+send you an updated device database which you have to import into your
+QmixElements software or, if necessary, an updated software version if
+the terminals are not supported by QmixElements at the moment. After you
+have imported the updated device database or reinstalled the software,
+please perform the following instructions.</p>
+</div></blockquote>
+<p><span class="step">Step 1 - Preparations</span></p>
+<p>Please add your Qmix-I/O-B module only to your Qmix system and check
+that your device is switched off. Physically add your new terminals to
+your Qmix-I/O-B. Terminate the Qmix-I/O-B with the Beckhoff KL 9010 end
+terminal. Finally switch on your device.</p>
+<div class="caution admonition">
+<p class="admonition-title">Attention</p>
+<p>Do not forget to terminate your Qmix-I/O-B using
+the KL 9010 bus end terminal. Otherwise the device will not
+work..</p>
+</div>
+<p><span class="step">Step 2 - Restore Factory Default Settings</span></p>
+<p>Factory default settings need to be restored in order to let the device
+properly set up it’s communication parameters. Therefore in QmixElements
+load the device configuration <em>canopentools</em>. Connect the software to
+your Qmix system and scan for devices connected to your base module. A
+generic I/O device should be displayed (see figure below).</p>
+<img alt="scan beckhoff.png" src="_images/image85.png" />
+<p>Next please look for the object dictionary entry <em>1011 Restore default
+parameters.</em> In sub-index 4 <em>Restore Manufacturer Defined Default
+Parameters</em> please enter the value <em>0x64616F6C</em> in <strong>Data (hex)</strong>.
+Subsequently please reset the device pressing the <span class="guilabel">All nodes: Reset</span>
+button (please see figures below).</p>
+<img alt="restore_load.png" src="_images/image86.png" />
+<img alt="reset_node.png" src="_images/image87.png" />
+<p><span class="step">Step 3 - Adapt Inhibit Time and Save Parameters</span></p>
+<p>Now you need to set the inhibit time of all <em>Transmit
+PDO Communication Parameter</em> entries for analog input devices. Starting
+from object dictionary entry 1801 till 1803, please click the sub-index
+1 <em>COB-ID</em> and check whether the first digit in <strong>Data (hex)</strong> is 8. If
+it is not, in sub-index <em>3 Inhibit Time</em> please enter the value 1000 in
+the <strong>Data</strong> field. If you have found a COB-ID carrying 8 as the first
+digit in Data (hex), the communication parameter is deactivated. That
+means you have successfully finished this step (please see figure
+below).</p>
+<div class="note admonition">
+<p class="admonition-title">Important</p>
+<p>Object dictionary entry 1800 is reserved for
+digital input channels. Please leave it’s configuration
+untouched.</p>
+</div>
+<img alt="inhibit_time.png" src="_images/image88.png" />
+<p>Finally you’ll just have to save the configured parameters by pressing
+the <span class="guilabel">Node: Store Parameters</span> button and accept the following question
+for storing the parameters permanently to the device.(please see the
+figure below).</p>
+<img alt="STORE.png" src="_images/image89.png" />
+<p>You have finished adding the new terminals and should now be able to
+create a new device configuration with your updated Qmix-I/O-B device
+and use it within your application.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Qmix_P_Q%2B_Q-_TC_and_V_Modules.html" class="btn btn-neutral float-left" title="3. Qmix P / Q+ / Q- / TC and V Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Nemesys_UserInterface.html" class="btn btn-neutral float-right" title="5. Nemesys UserInterface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, CETONI GmbH.
+      <span class="lastupdated">Last updated on Feb 05, 2024 09:27.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

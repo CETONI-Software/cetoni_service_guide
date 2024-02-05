@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Nemesys Service Tool &mdash; CETONI Service Guide</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/cetoni_style_override_css/style_override.css" type="text/css" />
+      <link rel="stylesheet" href="_static/cetoni_style_override_css/color_roles.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/sg_color_roles.css" type="text/css" />
+      <link rel="stylesheet" href="_static/dark_mode_css/general.css" type="text/css" />
+      <link rel="stylesheet" href="_static/dark_mode_css/dark.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script src="_static/dark_mode_js/default_light.js"></script>
+        <script src="_static/dark_mode_js/theme_switcher.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. CETONI Elements Software" href="QmixElements_Software.html" />
+    <link rel="prev" title="CETONI Nemesys / Qmix Service Guide" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> CETONI Service Guide
+            <img src="_static/logo_sidebar.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Nemesys Service Tool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#download">1.1. Download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">1.2. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#start">1.3. Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#searching-for-devices-nodes">1.4. Searching for devices (nodes)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameter-export-import">1.5. Parameter export / import</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#open-parameter-export-import-wizard">1.5.1. Open parameter export/import wizard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#device-parameter-import">1.5.2. Device Parameter Import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#device-parameter-export">1.5.3. Device Parameter Export</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#edit-device-parameters">1.6. Edit Device Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#firmware-update">1.7. Firmware Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fixing-double-module-node-id-conflict">1.8. Fixing Double-Module Node ID Conflict</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="QmixElements_Software.html">2. CETONI Elements Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Qmix_P_Q%2B_Q-_TC_and_V_Modules.html">3. Qmix P / Q+ / Q- / TC and V Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Qmix_IO-B_Module.html">4. Qmix I/O-B Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Nemesys_UserInterface.html">5. Nemesys UserInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BASE120_BASE600_Firmware_Update.html">6. BASE 120 / BASE 600 Firmware Update</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CETONI Service Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">1. </span>Nemesys Service Tool</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nemesys-service-tool">
+<h1><span class="section-number">1. </span>Nemesys Service Tool<a class="headerlink" href="#nemesys-service-tool" title="Permalink to this headline"></a></h1>
+<section id="download">
+<h2><span class="section-number">1.1. </span>Download<a class="headerlink" href="#download" title="Permalink to this headline"></a></h2>
+<p>For most service procedures in this guide you need special software –
+the Nemesys Service Tool – <strong>EPOS Studio</strong>. You can download this service
+tool from this location:</p>
+<p><a class="reference external" href="https://cetoni.com/software-downloads/">https://cetoni.com/software-downloads/</a></p>
+</section>
+<section id="installation">
+<h2><span class="section-number">1.2. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
+<ol class="steps arabic simple">
+<li><p>Run the downloaded <code class="file docutils literal notranslate"><span class="pre">*.exe</span></code> file to start the installation.</p></li>
+<li><p>Select the custom setup and ensure that the following components are selected
+(<em>EPOS</em>, <em>EPOS2</em> and <em>EPOS Studio</em>):</p></li>
+</ol>
+<img alt="_images/image8.png" src="_images/image8.png" />
+</section>
+<section id="start">
+<h2><span class="section-number">1.3. </span>Start<a class="headerlink" href="#start" title="Permalink to this headline"></a></h2>
+<div class="note admonition">
+<p class="admonition-title">Important</p>
+<p>Before you start the EPOS Studio make sure that your Starter Module /
+Base Module is properly connected to your PC and switched on. Make sure
+that no other pump is connected to your Starter Module and that only one
+Nemesys pump is connected to your Base Module.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Important</p>
+<p>Only one single pump should be connected to your
+PC when using the service tool to avoid communication
+issues and to prevent accidental modification of device
+parameters.</p>
+</div>
+<p>Now start the EPOS Studio software. The Startup wizard appears and
+guides you through the creation of an EPOS Studio project.</p>
+<ol class="steps arabic">
+<li><p>Select <span class="menuselection">Create New Project</span>.</p>
+<img alt="_images/image9.png" src="_images/image9.png" />
+</li>
+<li><p>Enter a project name.</p>
+<img alt="_images/image10.png" src="_images/image10.png" />
+</li>
+<li><p>Skip this step.</p>
+<img alt="_images/image11.png" src="_images/image11.png" />
+</li>
+<li><p>Select the communication driver <span class="menuselection">CANopen</span> <span class="guinum">❶</span> (or RS232, if you are
+connected via RS232) and add it to your drivers in the network on the
+right side <span class="guinum">❷</span>.</p>
+<img alt="_images/image12.png" src="_images/image12.png" />
+</li>
+<li><p>Click the <span class="guilabel">Finish</span> button.</p>
+<img alt="_images/image13.png" src="_images/image13.png" />
+</li>
+<li><p>Now you should see the applications screen.</p>
+<img alt="_images/image14.png" src="_images/image14.png" />
+</li>
+</ol>
+</section>
+<section id="searching-for-devices-nodes">
+<h2><span class="section-number">1.4. </span>Searching for devices (nodes)<a class="headerlink" href="#searching-for-devices-nodes" title="Permalink to this headline"></a></h2>
+<ol class="steps arabic">
+<li><p>Right click on the <strong>CAN0</strong> communication interface and select
+<span class="guilabel">Scanning Devices</span>.</p>
+<img alt="_images/image15.png" src="_images/image15.png" />
+</li>
+<li><p>In the following Scanning Devices dialog, click the <span class="guilabel">Settings</span> button.</p>
+<img alt="_images/image16.png" src="_images/image16.png" />
+</li>
+<li><p>In the Scanning Settings dialog, deselect all Transfer Rates <strong>except
+1000000 Bit/s</strong> <span class="guinum">❶</span>. Then deselect <span class="guilabel">LSS Method</span> <span class="guinum">❷</span> and click <span class="guilabel">OK</span>
+<span class="guinum">❸</span>.</p>
+<img alt="_images/image17.png" src="_images/image17.png" />
+</li>
+<li><p>Now click the <span class="guilabel">Start Scanning</span> Button in the Scanning Devices dialog. The
+software now tries to communicate with all devices starting from ID 1 to
+ID 127.</p>
+<img alt="_images/image18.png" src="_images/image18.png" />
+</li>
+<li><p>As soon as a node appears in the list of scanned devices <span class="guinum">❶</span>, you can stop
+the scanning by clicking the <span class="guilabel">Stop Scanning</span> button <span class="guinum">❷</span>. Then close the
+Scanning Devices dialog by clicking the <span class="guilabel">OK</span> button in the bottom right.
+Now you should see the main application window again with the detected
+node below CAN0 interface:</p>
+<img alt="_images/image19.png" src="_images/image19.png" />
+</li>
+<li><p>Click with the right mouse button on the node and then select
+<span class="guilabel">Connect</span> from the context menu.</p>
+<img alt="_images/image20.png" src="_images/image20.png" />
+</li>
+<li><p>Now the red cross should disappear from the node item and you are
+connected to the device. It is possible that the device indicates a <strong>CAN
+Passive Mode Error</strong> right after connection in the status panel at the
+bottom (see figure below). This is not a real error but just an
+indication that no other device was connected to the bus at the time
+when the device was turned on.</p>
+<img alt="_images/image21.png" src="_images/image21.png" />
+</li>
+<li><p>To clear this error, simply click with the right mouse button on the
+error message, and select the menu item <span class="guilabel">Clear All Entries</span> from the
+context menu (figure below).</p>
+<img alt="_images/image22.png" src="_images/image22.png" />
+</li>
+</ol>
+<p>Now your device should be properly connected and you are ready to
+proceed with further operations. The following picture shows, how your
+communication panel should look like if everything went well.</p>
+<img alt="_images/image23.png" src="_images/image23.png" />
+</section>
+<section id="parameter-export-import">
+<h2><span class="section-number">1.5. </span>Parameter export / import<a class="headerlink" href="#parameter-export-import" title="Permalink to this headline"></a></h2>
+<section id="open-parameter-export-import-wizard">
+<h3><span class="section-number">1.5.1. </span>Open parameter export/import wizard<a class="headerlink" href="#open-parameter-export-import-wizard" title="Permalink to this headline"></a></h3>
+<img alt="_images/image24.png" src="_images/image24.png" />
+<p>To start the parameter export/import wizard, click with the right mouse
+button on the node you would like to configure. Then select the <strong>Wizards</strong>
+from the context menu and in the Wizards menu select <span class="guilabel">Parameter Export / Import</span>.</p>
+</section>
+<section id="device-parameter-import">
+<h3><span class="section-number">1.5.2. </span>Device Parameter Import<a class="headerlink" href="#device-parameter-import" title="Permalink to this headline"></a></h3>
+<div class="error admonition">
+<p class="admonition-title">Caution</p>
+<p>Before you import any parameters into your device,
+you should export your current device parameters so that
+you can restore them later in case something goes wrong
+with the parameter import or in case you imported the wrong
+parameters.</p>
+</div>
+<ol class="steps arabic">
+<li><p>In the Parameter Export/Import dialog first click the <span class="guilabel">…</span> button
+on the right to select a parameter file.</p>
+<img alt="_images/image25.png" src="_images/image25.png" />
+</li>
+<li><p>Click the button <span class="guilabel">Import parameters from file</span> to import the
+parameters into the device.</p>
+<img alt="_images/image26.png" src="_images/image26.png" />
+</li>
+<li><p>The software now writes the parameters into your device and stores them
+permanently into internal non-volatile memory.</p>
+<img alt="_images/image27.png" src="_images/image27.png" />
+</li>
+</ol>
+<p>At the end of the parameter import, the software should report
+<strong>“Parameter Import successful”</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you get an error importing the parameters, you
+should repeat the parameter import – sometimes this fixes
+the problem.</p>
+</div>
+</section>
+<section id="device-parameter-export">
+<h3><span class="section-number">1.5.3. </span>Device Parameter Export<a class="headerlink" href="#device-parameter-export" title="Permalink to this headline"></a></h3>
+<ol class="steps arabic">
+<li><p>In the Parameter Export/Import dialog first click the <span class="guilabel">…</span>  button
+on the right to select a parameter filename.</p>
+<img alt="_images/image25.png" src="_images/image25.png" />
+</li>
+<li><p>In the Parameter File dialog navigate to the target folder, enter the
+name of the parameter file <span class="guinum">❶</span> and then click the <span class="guilabel">Open</span> button <span class="guinum">❷</span>.</p>
+<img alt="_images/image28.png" src="_images/image28.png" />
+</li>
+<li><p>Click the button <span class="guilabel">Export parameters from file</span> to import the
+parameters into the device.</p>
+<img alt="_images/image29.png" src="_images/image29.png" />
+</li>
+<li><p>The software now reads the parameters from the device and writes them
+into a <code class="file docutils literal notranslate"><span class="pre">*.dcf</span></code> file (Device Description File).</p>
+<img alt="_images/image30.png" src="_images/image30.png" />
+</li>
+</ol>
+<p>At the end of the parameter export, the software should report
+<strong>“Parameter Export successful”</strong>.</p>
+</section>
+</section>
+<section id="edit-device-parameters">
+<h2><span class="section-number">1.6. </span>Edit Device Parameters<a class="headerlink" href="#edit-device-parameters" title="Permalink to this headline"></a></h2>
+<p>You can use der service tool to edit device parameters.</p>
+<div class="error admonition">
+<p class="admonition-title">Caution</p>
+<p>Before you edit any parameters, you should export
+your current device parameters to restore them later in
+case something goes wrong.</p>
+</div>
+<div class="error admonition">
+<p class="admonition-title">Caution</p>
+<p>Do only change parameters on request of the CETONI
+service staff. If you change parameters without consulting
+CETONI service staff, you may lose warranty in case of a
+device error.</p>
+</div>
+<ol class="steps arabic">
+<li><p>To open the parameter editor, click with the right mouse button on the
+node you would like to edit. Then select the menu item <span class="guilabel">Tools</span> from the
+context menu and in the Tools menu select <span class="menuselection">Object Dictionary</span>.</p>
+<img alt="_images/image31.png" src="_images/image31.png" />
+</li>
+<li><p>The software now shows the object dictionary for the selected node. In
+the object dictionary view select <span class="guilabel">All Objects</span> from the <em>Active Object
+Filter</em> in the top right corner to show all object dictionary entries
+(see figure below).</p>
+<img alt="_images/image32.png" src="_images/image32.png" />
+</li>
+<li><p>To edit a parameter, simply double click the parameter row:</p>
+<img alt="_images/image33.png" src="_images/image33.png" />
+</li>
+<li><p>Now you can enter the new value <span class="guinum">❶</span> in the Edit Value Window and click
+<span class="guilabel">OK</span> <span class="guinum">❷</span>.</p>
+<img alt="_images/image34.png" src="_images/image34.png" />
+</li>
+</ol>
+<p>All edited parameters will get lost if the device is turned off or in
+case of a reset. To save the changed parameters persistent into the
+device non-volatile memory, click with right mouse button on the node
+item in the left <span class="guilabel">Communication</span> panel and select <span class="guilabel">Save All Parameter</span>
+from the context menu.</p>
+<img alt="_images/image35.png" src="_images/image35.png" />
+</section>
+<section id="firmware-update">
+<h2><span class="section-number">1.7. </span>Firmware Update<a class="headerlink" href="#firmware-update" title="Permalink to this headline"></a></h2>
+<div class="note admonition">
+<p class="admonition-title">Important</p>
+<p>To update the firmware, you need to be connected to your device – that
+means you have successfully completed the steps in section <a class="reference internal" href="#searching-for-devices-nodes">Searching for devices (nodes)</a>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To protect other devices from accidental updates, you
+should only connect the device to your base module, that
+you would like to update.</p>
+</div>
+<ol class="steps arabic">
+<li><p>To open the Firmware Download Wizard, click with the right mouse button
+on the node you would like to update. Then select the menu item <span class="menuselection">Wizards</span>
+from the context menu and in the Wizards menu select
+<span class="menuselection">Firmware Download Wizard</span>.</p>
+<img alt="_images/image36.png" src="_images/image36.png" />
+</li>
+<li><p>In the window that appears, confirm the warning by clicking the <span class="guilabel">Confirm</span>
+button and then click the <span class="guilabel">Next &gt;</span> button to continue.</p>
+<img alt="_images/image37.png" src="_images/image37.png" />
+</li>
+<li><p>In the next step of the update wizard, you will see on the left <span class="guinum">❶</span> the
+firmware version, which is currently installed in the device. If the
+version matches the one you want to install, you can now exit the
+Fimware update.</p>
+<img alt="_images/image38.png" src="_images/image38.png" />
+</li>
+<li><p>If the correct version is not installed in the device, click on the <span class="guilabel">…</span>
+button <span class="guinum">❷</span> to display the file dialog for selecting the
+firmware file. Select the firmware file according to the information
+provided by the CETONI support staff.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Normally the firmware files are located in
+<code class="code docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\maxon</span> <span class="pre">motor</span> <span class="pre">ag\EPOS</span> <span class="pre">Positioning</span> <span class="pre">Controller\EPOS2\03</span> <span class="pre">Configuration</span></code></p>
+</div>
+</li>
+<li><p>Now you will see the version of the firmware update file on the right
+side. Click the <span class="guilabel">Next</span> button to start the firmware update.</p>
+<img alt="_images/image39.png" src="_images/image39.png" />
+</li>
+<li><p>In the next wizard page, click the <span class="guilabel">…</span> button to select a
+writable folder for temporary storage of the exported device parameters.
+You can choose the Desktop folder here or any other writable folder.
+Then click the <span class="guilabel">Export</span> button to export the device configuration file
+(<code class="file docutils literal notranslate"><span class="pre">*.dcf</span></code>).</p>
+<img alt="_images/image40.png" src="_images/image40.png" />
+</li>
+<li><p>After the parameter export, click the <span class="guilabel">Next</span> button to proceed. On the
+next Wizard page click the <span class="guilabel">Start</span> button to start the firmware download.</p>
+<img alt="_images/image41.png" src="_images/image41.png" />
+</li>
+<li><p>Now wait, until the progress bar reaches 100% and proceed by clicking
+the <span class="guilabel">Next</span> button.</p>
+<img alt="_images/image42.png" src="_images/image42.png" />
+</li>
+<li><p>On the next page of the Firmware wizard, you can reimport the previously
+exported device parameters. The input field should already contain the
+right parameter file. Click the <span class="guilabel">Import Parameter</span> button to start the
+parameter import.</p>
+<img alt="_images/image43.png" src="_images/image43.png" />
+</li>
+<li><p>After the parameter import, you can click the <span class="guilabel">Next</span> button to finish the
+firmware download wizard.</p></li>
+</ol>
+</section>
+<section id="fixing-double-module-node-id-conflict">
+<h2><span class="section-number">1.8. </span>Fixing Double-Module Node ID Conflict<a class="headerlink" href="#fixing-double-module-node-id-conflict" title="Permalink to this headline"></a></h2>
+<p>If you have one Double Module connected to one Base Module, a device
+scan with the EPOS Studio Software should show you two different node
+identifiers – one for each pump channel of the double module. If only
+one node has been detected, then there is likely a node conflict - i.e.
+the two channels have the same node ID.</p>
+<p>To fix the node conflict, do the following steps:</p>
+<ol class="steps arabic">
+<li><p>Connect only the Double Module to your base module – remove any other modules.</p></li>
+<li><p>Then set the service switch into <strong>OFF</strong> position (see picture above).</p></li>
+<li><p>Now scan for devices in EPOS Studio.</p>
+<p><a class="reference internal" href="_images/image44.png"><img alt="schalter_geraet" src="_images/image44.png" style="width: 3.09375in; height: 2.44922in;" /></a> <a class="reference internal" href="_images/image45.png"><img alt="schalter_geraet_zeichnung_02" src="_images/image45.png" style="width: 3.03863in; height: 2.23958in;" /></a></p>
+<p>The scan in EPOS studio should detect one Node:</p>
+<img alt="_images/image46.png" src="_images/image46.png" />
+<div class="note admonition">
+<p class="admonition-title">Important</p>
+<p>If the software does not detect any node, then there is a hardware
+defect and you should contact the CETONI support for further
+instructions.</p>
+</div>
+</li>
+<li><p>If the software has detected one node, then you can stop the scanning
+process and then click with the right mouse button on the node row in
+the table of scanned devices and select the menu item <span class="menuselection">Change Node-ID</span>
+from the context menu.</p>
+<img alt="_images/image47.png" src="_images/image47.png" />
+</li>
+<li><p>Set the node ID to 114. Then rescan to verify that the software finds
+the node 114. The node 114 is now your left channel. Now set the service
+switch back into the <strong>ON</strong> position. Scan for devices in EPOS Studio. The
+software should find two nodes - the node 114 and a second node.</p>
+<img alt="_images/image48.png" src="_images/image48.png" />
+</li>
+<li><p>Change the Node ID of the channel with the Node ID 144 to node ID
+113 and then set the node ID from Node 114 to 112 and rescan to verify
+that the two nodes are detected. The software should detect the two
+nodes 112 and 113.</p>
+<img alt="_images/image49.png" src="_images/image49.png" />
+</li>
+<li><p>Now you can reconfigure your device in QmixElements software.</p>
+<div class="note admonition">
+<p class="admonition-title">Important</p>
+<p>If you use a Starter Module instead of a BASE-Module then you might need
+to change the Node ID of the Starter Module to ID 115 before you connect
+the Double Module to avoid node ID conflicts with the Starter Module.</p>
+</div>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="CETONI Nemesys / Qmix Service Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="QmixElements_Software.html" class="btn btn-neutral float-right" title="2. CETONI Elements Software" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, CETONI GmbH.
+      <span class="lastupdated">Last updated on Feb 05, 2024 09:27.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
